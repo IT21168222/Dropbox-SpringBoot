@@ -3,11 +3,12 @@ import { Route, withRouter } from 'react-router-dom';
 import * as API from '../api/API';
 import Login from "./Login";
 import Signup from "./Signup";
-//import AccountDetails from "./AccountDetails";
+import AccountDetails from "./AccountDetails";
 import Message from "./Message";
 import Welcome from "./Welcome";
 import AfterLogin from "./AfterLogin";
 //import Folder from "./Folder";
+import Groups from "./Groups";
 
 
 class NewerHomePage extends Component {
@@ -130,7 +131,16 @@ class NewerHomePage extends Component {
 
                     <AfterLogin handleLogout={this.handleLogout} sendupp={this.setname}/>
                 )}/>
+                <Route exact path="/details" render={() => (
+                    // <Welcome username={this.state.username}/>
 
+                    <AccountDetails/>
+                )}/>
+                <Route exact path="/groups" render={() => (
+                    // <Welcome username={this.state.username}/>
+
+                    <Groups/>
+                )}/>
             </div>
         );
     }
