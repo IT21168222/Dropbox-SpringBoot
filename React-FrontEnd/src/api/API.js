@@ -92,6 +92,103 @@ export const star = (payload) =>
             return error;
         });
 
+export const Unstar = (payload) =>
+    fetch(`${api}/upload_info/unstar`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+export const deletefile = (payload) =>
+    fetch(`${api}/upload_info/delete`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const Share = (payload) =>
+    fetch(`${api}/upload_info/share`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const Directory = (payload) =>
+    fetch(`${api}/upload_info/directory`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+console.log(res.status)
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+export const doprofile = (payload) =>
+    fetch(`${api}/user_profile/profile`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getDetails = () =>
+    fetch(`${api}/user_profile/getdetails`,{credentials:'include'})
+        .then(res => res.json())
+        .catch(error => {
+            console.log("This is error.");
+            return error;
+        });
+
 export const getImages = () =>
     fetch(`${api}/upload_info/getimg`,{credentials:'include'})
         .then(res => res.json())
