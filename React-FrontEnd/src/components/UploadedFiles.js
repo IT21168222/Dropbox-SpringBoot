@@ -187,7 +187,7 @@ console.log(path)
                     {this.state.images_here.map(tile => (
                         <tr key={tile.img} cols={tile.cols || 1}>
                             {tile.isdirec=='0' ? <td className={'tablefield'}> <a href={'http://localhost:3001/kafka-back-end/public/uploads/'+tile.img} download >{tile.path}</a></td> :<td className={'tablefield'}> <a onClick={() => this.sendfoldername(tile.img)}><span><img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/512/Folder-icon.png" height="20"/></span>{tile.path}</a></td>}
-                            <td className={'tablefield'}>{tile.timer}</td>
+                            <td className={'tablefield'}>{tile.activity_time}</td>
                             <td className={'tablefield'}>{tile.starred}</td>
                             <td className={'tablefield'}> <div className="dropdown">
                                 <button className="dropbtn">...</button>

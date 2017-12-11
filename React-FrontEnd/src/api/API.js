@@ -163,7 +163,13 @@ console.log(res.status)
             return error;
         });
 
-
+export const showActivity = () =>
+    fetch(`${api}/user_activity/showActivity`,{credentials:'include'})
+        .then(res => res.json())
+        .catch(error => {
+            console.log("This is error.");
+            return error;
+        });
 export const doprofile = (payload) =>
     fetch(`${api}/user_profile/profile`, {
         method: 'POST',

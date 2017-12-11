@@ -1,0 +1,21 @@
+User
+Opinion
+Forum
+Discussion
+
+
+Admin can remove users
+remove discussion
+remove opinion
+remove user
+
+remove discussions
+when a discussion is removed 
+first opinion is removed follwed by discussion
+
+create a new discussion page
+
+dashboard
+to see the count of services posted
+no of users
+no of student responded

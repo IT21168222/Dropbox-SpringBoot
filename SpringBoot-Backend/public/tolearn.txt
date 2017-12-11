@@ -1,0 +1,7 @@
+prototypal inheritance
+closures
+functional programming
+lambdas
+first-class functions, higher order functions
+pure functions  Avoid side-effects.
+difference between classical inheritance and prototypal inheritance?

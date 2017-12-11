@@ -16,7 +16,7 @@ class InsideGroup extends Component {
         };
     }
     componentDidMount(){
-        axios.create({withCredentials:true}).get('http://localhost:3001/groupmembers',
+        axios.create({withCredentials:true}).get('http://localhost:8080/groups/groupmembers',
             {
                 params: {
                     groupname: this.state.groupname
@@ -31,7 +31,7 @@ class InsideGroup extends Component {
         });
     }
     componentWillMount() {
-        axios.create({withCredentials:true}).get('http://localhost:3001/groupmembers',
+        axios.create({withCredentials:true}).get('http://localhost:8080/groups/groupmembers',
             {
                 params: {
                     groupname: this.state.groupname
@@ -52,12 +52,12 @@ class InsideGroup extends Component {
 
     deletememberfromgroup(name)
     {
-        axios.create({withCredentials:true}).post('http://localhost:3001/deletememberfromgroup',
+        axios.create({withCredentials:true}).post('http://localhost:8080/groups/deletememberfromgroup',
             {
                 membername: name,
                 groupname:this.state.groupname
             }).then((response) => {
-            axios.create({withCredentials: true}).get('http://localhost:3001/groupmembers',
+            axios.create({withCredentials: true}).get('http://localhost:8080/groups/groupmembers',
                 {
                     params: {
                         groupname: this.state.groupname
@@ -85,12 +85,11 @@ class InsideGroup extends Component {
             .then((value) => {
                 name= `${value}`;
                 swal(`New Member added to the Group`);
-                axios.create({withCredentials:true}).post('http://localhost:3001/addmemberingroup',
+                axios.create({withCredentials:true}).post('http://localhost:8080/groups/addmemberingroup',
                     {
-                        name: name,
-                        groupname:this.state.groupname
+                        name: name+'&'+this.state.groupname
                     }).then((response) => {
-                    axios.create({withCredentials: true}).get('http://localhost:3001/groupmembers',
+                    axios.create({withCredentials: true}).get('http://localhost:8080/groups/groupmembers',
                         {
                             params: {
                                 groupname: this.state.groupname

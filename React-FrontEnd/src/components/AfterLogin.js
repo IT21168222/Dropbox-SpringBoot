@@ -6,7 +6,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import * as API from '../api/API';
 import UploadedFiles from "./UploadedFiles";
-//import Showactivity from "./Showactivity";
+import Showactivity from "./Showactivity";
 import Login from "./Login";
 import TextField from 'material-ui/TextField';
 
@@ -40,17 +40,18 @@ class AfterLogin extends Component {
     };
 
 
-    // handleActivity = () => {
-    //     API.showActivity()
-    //         .then((data) => {
-    //             this.setState({
-    //                 activity: data,
-    //                 dispactivity:true
-    //             });
-    //         });
-    //
-    //
-    // };
+    handleActivity = () => {
+        API.showActivity()
+            .then((data) => {
+                this.setState({
+                    activity: data,
+                    dispactivity:true
+                });
+                console.log(this.state.activity)
+            });
+
+
+    };
 
 
     setname = (name) => {
@@ -121,12 +122,12 @@ class AfterLogin extends Component {
                 });
                 console.log(this.state.images)
             });
-        // API.showActivity()
-        //     .then((data) => {
-        //         this.setState({
-        //             activity: data
-        //         });
-        //     });
+        API.showActivity()
+            .then((data) => {
+                this.setState({
+                    activity: data
+                });
+            });
     };
     render() {
         return (
@@ -153,7 +154,7 @@ class AfterLogin extends Component {
                     onChange={this.handleFileUpload}
                 />
                 <UploadedFiles images={this.state.images} sendup={this.setname}/>
-
+                {this.state.dispactivity?<Showactivity activity={this.state.activity}/>:''}
             </div>
 
         );
